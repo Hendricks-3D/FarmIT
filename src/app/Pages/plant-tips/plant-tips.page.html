@@ -1,17 +1,44 @@
 <ion-header>
   <ion-toolbar>
-    <!-- Searchbar with cancel button shown on focus -->
-<ion-searchbar showCancelButton="focus" animated></ion-searchbar>
+ 
+<ion-grid>
+  <ion-row>
+    <ion-col offset=1 size=10>
+      <div style="position: relative">
+      
+        <ion-searchbar debounce=500  (ionInput)="searchPlants($event)"  [(ngModel)]="searchInput"  showCancelButton="focus" animated></ion-searchbar>
+        <div style="position: absolute; width: 100%; z-index: 999;">
+          <ion-list lines="none"  *ngIf="searchInput.length > 0">
+            <ion-item  *ngFor="let plant of plants | customFilter:searchInput"  >  
+
+              <div >
+                  <ion-icon name="pin"></ion-icon>
+             
+              {{plant.description}}
+              </div>
+            
+            </ion-item>
+          </ion-list>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
 
+  
+
+
+
+
   <ion-card>
     <ion-card-header>
       <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-      <ion-card-title>Carrots</ion-card-title>
+      <ion-card-title>Carrot</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>

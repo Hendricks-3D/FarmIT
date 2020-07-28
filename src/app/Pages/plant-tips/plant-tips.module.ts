@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { PlantTipsPageRoutingModule } from './plant-tips-routing.module';
 
 import { PlantTipsPage } from './plant-tips.page';
-
+import { CustomFilterPipe } from '../../Pipes/custom-filter.pipe';
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +15,6 @@ import { PlantTipsPage } from './plant-tips.page';
     IonicModule,
     PlantTipsPageRoutingModule
   ],
-  declarations: [PlantTipsPage]
+  declarations: [PlantTipsPage,CustomFilterPipe]
 })
 export class PlantTipsPageModule {}

@@ -18,10 +18,12 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 // environment- environment stores firebase object
 import { environment } from '../environments/environment';
+import { CustomFilterPipe } from './Pipes/custom-filter.pipe';
+
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, CustomFilterPipe],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     AngularFireDatabaseModule,
