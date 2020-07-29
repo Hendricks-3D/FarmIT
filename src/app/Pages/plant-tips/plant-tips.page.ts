@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 import { IPlants } from 'src/app/Interfaces/iplants';
 import { FirebaseDBService } from 'src/app/Services/firebase/firebase-db.service';
 
@@ -9,38 +9,44 @@ import { FirebaseDBService } from 'src/app/Services/firebase/firebase-db.service
 })
 
 
+@Injectable({
+  providedIn: 'root'
+})
 export class PlantTipsPage implements OnInit {
 
   public plants:IPlants[]=[];
+  public plantsList:IPlants[]=[];
   public searchInput:string='';//stores user input from the searchbar
 
-  private fireDB: FirebaseDBService;//must be injected in constructor but getting error
+  //must be injected in constructor but getting error
 
   /**
    * private fireDB: FirebaseDBService
    * Error when injecting custome firebaseDB service
    * 
    * */
-  constructor() { }
+  constructor(private fireDB: FirebaseDBService) { }
 
   ngOnInit() {
   }
 
   ngAfterContentInit() {
-  // this.getAllPlants();
+  this.getAllPlants();
+  this.plantsList = this.plants;
+
   }
 
 
       private getAllPlants():void
       {
-          this.fireDB.getAllPlants().snapshotChanges().subscribe(notifications=>
+          this.fireDB.getAllPlants().snapshotChanges().subscribe(plants=>
             {
-            notifications.forEach(not=>{
-            this.plants.push(not.payload.val() as IPlants);
-            console.log(not.payload.val())
+            plants.forEach(plant=>{
+            this.plants.push(plant.payload.val() as IPlants);
+            
            });
           });
-
+        
       }
 
 
@@ -52,6 +58,7 @@ export class PlantTipsPage implements OnInit {
 searchPlants(ev: any) {
   // 
   this.plants=[];
+  this.plants = this.plantsList;
 
   let name:string;
   
@@ -67,6 +74,12 @@ searchPlants(ev: any) {
   }
 }
 
+
+
+public refreshFilter():void{
+  this.plants=[];
+  this.getAllPlants();
+}
 
 
 }
