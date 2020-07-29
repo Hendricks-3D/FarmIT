@@ -7,32 +7,36 @@ const routes: Routes = [
     path: 'tabs',
     component: TabsPage,
     children: [
-      {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
-      },
-      {
-        path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
-      },
-      {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
-      },
+      
+
       {
         path: 'tips',
         loadChildren: () => import('../Pages/plant-tips/plant-tips.module').then(m => m.PlantTipsPageModule)
       },
+
+      {
+        path: 'market',
+        loadChildren: () => import('../Pages/market/market.module').then(m => m.MarketPageModule)
+      },
+      {
+        path: 'garden',
+        loadChildren: () => import('../Pages/garden/garden.module').then(m => m.GardenPageModule)
+      }
+      ,
+      {
+        path: 'home',
+        loadChildren: () => import('../Pages/home/home.module').then(m => m.HomePageModule)
+      },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/home',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/home',
     pathMatch: 'full'
   }
 ];

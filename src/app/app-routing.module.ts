@@ -9,6 +9,18 @@ const routes: Routes = [
   {
     path: 'plant-tips',
     loadChildren: () => import('./Pages/plant-tips/plant-tips.module').then( m => m.PlantTipsPageModule)
+  },
+  {
+    path: 'market',
+    loadChildren: () => import('./Pages/market/market.module').then( m => m.MarketPageModule)
+  },
+  {
+    path: 'garden',
+    loadChildren: () => import('./Pages/garden/garden.module').then( m => m.GardenPageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./Pages/home/home.module').then( m => m.HomePageModule)
   }
 ];
 @NgModule({
