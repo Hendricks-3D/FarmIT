@@ -32,6 +32,18 @@ const routes: Routes = [
         loadChildren: () => import('../Pages/add-to-garden/add-to-garden.module').then(m => m.AddToGardenPageModule)
       },
       {
+        path: 'login',
+        loadChildren: () => import('../Pages/login/login.module').then(m => m.LoginPageModule)
+      },
+      {
+        path: 'forget-password',
+        loadChildren: () => import('../Pages/forget-password/forget-password.module').then(m => m.ForgetPasswordPageModule)
+      },
+      {
+        path: 'registration',
+        loadChildren: () => import('../Pages/registration/registration.module').then(m => m.RegistrationPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'
