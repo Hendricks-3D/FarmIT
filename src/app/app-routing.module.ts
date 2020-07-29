@@ -29,6 +29,18 @@ const routes: Routes = [
   {
     path: 'add-to-garden',
     loadChildren: () => import('./Pages/add-to-garden/add-to-garden.module').then( m => m.AddToGardenPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./Pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'registeration',
+    loadChildren: () => import('./Pages/registeration/registeration.module').then( m => m.RegisterationPageModule)
+  },
+  {
+    path: 'forget-password',
+    loadChildren: () => import('./Pages/forget-password/forget-password.module').then( m => m.ForgetPasswordPageModule)
   }
 ];
 @NgModule({
