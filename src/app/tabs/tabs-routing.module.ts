@@ -28,6 +28,10 @@ const routes: Routes = [
         loadChildren: () => import('../Pages/home/home.module').then(m => m.HomePageModule)
       },
       {
+        path: 'addToGarden',
+        loadChildren: () => import('../Pages/add-to-garden/add-to-garden.module').then(m => m.AddToGardenPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'

@@ -21,6 +21,14 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./Pages/home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'garden-detail',
+    loadChildren: () => import('./Pages/garden-detail/garden-detail.module').then( m => m.GardenDetailPageModule)
+  },
+  {
+    path: 'add-to-garden',
+    loadChildren: () => import('./Pages/add-to-garden/add-to-garden.module').then( m => m.AddToGardenPageModule)
   }
 ];
 @NgModule({

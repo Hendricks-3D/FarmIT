@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-garden',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GardenPage implements OnInit {
 
-  constructor() { }
+  public imageUrl='../../../assets/carrots.jpg'
+  constructor(private route:Router ) { }
 
   ngOnInit() {
+  }
+
+
+  addCropToGarden():void{
+      this.route.navigateByUrl('/tabs/addToGarden');
   }
 
 }
