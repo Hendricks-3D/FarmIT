@@ -14,20 +14,17 @@ import { FirebaseDBService } from 'src/app/Services/firebase/firebase-db.service
 })
 export class PlantTipsPage implements OnInit {
 
-  public plants:IPlants[]=[];
-  public plantsList:IPlants[]=[];
+  public plants:IPlants[]=[];//Stores a list of plants retrieved from the firebase database
+  public plantsList:IPlants[]=[];// stores a copy of the list of plants so the search results can be refreshed on each key input
   public searchInput:string='';//stores user input from the searchbar
 
-  //must be injected in constructor but getting error
+  public selectedPlant= {} as IPlants; //Stores the plant selected from the user for ngModel
 
-  /**
-   * private fireDB: FirebaseDBService
-   * Error when injecting custome firebaseDB service
-   * 
-   * */
   constructor(private fireDB: FirebaseDBService) { }
 
   ngOnInit() {
+
+     this.selectedPlant.name='none';
   }
 
   ngAfterContentInit() {
@@ -76,9 +73,15 @@ searchPlants(ev: any) {
 
 
 
-public refreshFilter():void{
-  this.plants=[];
-  this.getAllPlants();
+/**
+ * This method adds the selected plant to our variable so we can use data binding to show the data
+ * @param plant 
+ */
+public showSearchResults(plant:IPlants):void
+{
+     this.selectedPlant= plant;
+
+     this.searchInput='';
 }
 
 
