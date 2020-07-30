@@ -37,6 +37,8 @@
 <br>
 <br>
  <ion-card  *ngIf="selectedPlant.name!=='none'">
+
+  <ion-img [src]="selectedPlant.thumbnail_url"></ion-img>
     <ion-card-header>
       <ion-card-title>{{selectedPlant.name}}</ion-card-title>
       <ion-card-subtitle>Reap Days:{{selectedPlant.reapDays}}</ion-card-subtitle>
