@@ -8,4 +8,5 @@ export interface IUser {
      DOB:string;
      ImageUrl:string;
      status:string;
+     
 }
