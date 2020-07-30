@@ -27,7 +27,7 @@ import { CustomFilterPipe } from './Pipes/custom-filter.pipe';
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     AngularFireDatabaseModule,
-    
+    AngularFireAuthModule,
   
     AngularFireModule.initializeApp(environment.firebase),
 ],

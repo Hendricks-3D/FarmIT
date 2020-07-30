@@ -4,6 +4,57 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
 
+
+<ion-content>
+  <div id="container" class="ion-text-center">
+    <ion-row>
+      <ion-col>
+        <h6 id="errors"></h6>
+
+        <h6 id="registerText">Register for a <span  class="singleLogo">FarmIT</span> Account!</h6>
+      </ion-col>
+    </ion-row>
+      <ion-row id="nameRow">
+        <ion-col></ion-col>
+        <ion-col size="5">
+          <ion-item>
+            <ion-input  placeholder="First Name" type="text" size="8px" inputmode="text" [(ngModel)]="user.firstName"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="5">
+          <ion-item>
+            <ion-input  placeholder="Last Name" type="text" size="8px" inputmode="text" [(ngModel)]="user.lastName"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+      <ion-row>
+      <ion-col></ion-col>
+      <ion-col size="10">
+        <div>
+          <ion-item>
+            <ion-input  placeholder="Email address or username" type="text" size="8px" inputmode="text" [(ngModel)]="user.email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input  placeholder="Password" type="password" size="8px" inputmode="password" [(ngModel)]="password"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input  placeholder="Confirm Password" type="password" size="8px" inputmode="password" [(ngModel)]="confirmPassword"></ion-input>
+          </ion-item>
+          <ion-button color="#2AC940" id="submitButton" expand="full" (click)="registerUser()"><span id="submitText" >Sign Me Up!</span></ion-button>
+        </div>
+        <ion-row>
+          <ion-col></ion-col>
+          <ion-col size="12">
+            <p class="ion-text-start" id="loginText" >Already have a <span>FarmIT</span> Account? <a (click)="goToLogin()">Login Instead</a>. </p>
+          </ion-col>
+          <ion-col></ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col></ion-col>
+      
+    </ion-row>
+  </div>
 </ion-content>
+

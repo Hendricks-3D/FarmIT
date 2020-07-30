@@ -1,9 +1,59 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" style="background-color: #007BC3 !important;">
+  
+  
 
-<ion-content>
+  <div style="margin-top: 40px;">
+    <ion-row>
+      <ion-col class="ion-text-center " >
+        <div style="margin-top: 50px;">
+          <span class="Logo" style="color: #3171e0;">FarmIT</span> 
+        </div>
+        <div style="margin-top: 34px">
+         
+        </div>
 
+        <div id="container" class="Login">
+          <ion-row>
+            <ion-col>
+              <ion-row>
+                <ion-col></ion-col>
+                <ion-col size="10" style="margin-top: 7%;">
+                  <div>
+                    <ion-item>
+                      <ion-input  placeholder="Email address or username" type="text" size="8px" inputmode="text" [(ngModel)]="email"></ion-input>
+                    </ion-item>
+                    <ion-item style="margin-top: 30px;">
+                      <ion-input  placeholder="Password" type="password" size="8px" inputmode="password" [(ngModel)]="password"></ion-input>
+                    </ion-item>
+                  </div>
+                </ion-col>
+                <ion-col></ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col></ion-col>
+                <ion-col size="9">
+                  <p class="ion-text-left" style="font-size: 12px;">Forget your login details? <a (click)="goToForgetPassword()">Click here</a> or 
+                  <a (click)="goToSignUp()">Sign Up</a> Instead</p>
+                </ion-col>
+                <ion-col></ion-col>
+              </ion-row>
+    
+              
+            </ion-col>
+          </ion-row>
+          <ion-row style="margin-top: 10px;">
+            <ion-col></ion-col>
+            <ion-col size="9">
+              <ion-button color="primary" id="submitButton" expand="full"  (click)="loginUser()"><span id="submitText">Login</span></ion-button>
+            </ion-col>
+            <ion-col></ion-col>
+          </ion-row>
+        </div> 
+      </ion-col>
+    </ion-row>
+  </div>
+
+  
+  <!-- Login Section -->
+  
 </ion-content>

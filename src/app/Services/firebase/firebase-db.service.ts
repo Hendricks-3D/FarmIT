@@ -59,5 +59,11 @@ public authenticateUser(email,password):Promise<firebase.auth.UserCredential>{
   return this.afAuth.auth.signInWithEmailAndPassword(email,password);
 }
 
-  
+   /**
+   * 
+   */
+  public sendforgetPasswordEmail(email):Promise<void>{
+    return this.afAuth.auth.sendPasswordResetEmail(email);
+  }
+
 }
