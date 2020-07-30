@@ -5,5 +5,27 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-grid>
+    <ion-row>
+      <ion-col offset=1 size=10>
+        <div style="position: relative">
+        
+          <ion-searchbar debounce=500  (ionInput)="searchPlants($event)"  [(ngModel)]="searchInput"  showCancelButton="focus" ></ion-searchbar>
+          <div style="position: absolute; width: 100%; z-index: 999;">
+            <ion-list lines="none"  *ngIf="searchInput.length > 1">
+              <ion-item  *ngFor="let plant of plants | customFilter:searchInput"  (click)="addToGarden(plant)">  
+  
+                <div >
+                    <ion-icon name="leaf-outline"></ion-icon>
+               
+                {{plant.name}}
+                </div>
+              
+              </ion-item>
+            </ion-list>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

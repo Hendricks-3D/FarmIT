@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {AngularFireDatabase} from '@angular/fire/database';
 import {AngularFireAuth} from '@angular/fire/auth';
+import { IUser } from 'src/app/Interfaces/iuser';
 
 
 @Injectable({
@@ -10,10 +11,47 @@ export class FirebaseDBService {
 
 
   //Firebase node references 
-  private mainDBNodeRef = "FARMITDB";
-  private plantNodeRef = "Plants";
+  public mainDBNodeRef = "FARMITDB";
+  public  plantNodeRef = "Plants";
+  public gardenRef="garden"
+  public userNodeRef = "userProfile";
+  public userData = {} as IUser;
+  
 
-  constructor(private afDatabase: AngularFireDatabase,private afAuth:AngularFireAuth) { }
+
+  constructor(private afDatabase: AngularFireDatabase,private afAuth:AngularFireAuth) {
+
+    
+   }
+
+
+/**
+ * THIS METHOD WILL FIRST GET THE USER ID FROM THE CURRENT AUTHENTICATION STATE
+ * THEN GET THE USER CURRENT DATA FROM THE DATABASE
+\ * THEN STORES USER DATA IN LOCALSTORAGE SINCE IT IS ONLY ACCESSIBLE IN THE `authstate.subscribe` SCOPE
+ * THEN RETURN THE USER DATA
+ */
+public GetCurrentUserData(): IUser {
+
+  this.afAuth.authState.subscribe(auth=>{
+
+
+    this.afDatabase.object(`${this.mainDBNodeRef}/${this.userNodeRef}/${auth.uid}`).snapshotChanges().subscribe(data=>{
+      this.userData = data.payload.val() as IUser;
+
+    localStorage.setItem('user',JSON.stringify(this.userData))
+  })
+
+  })
+  
+  
+this.userData = JSON.parse(localStorage.getItem('user'));
+
+  console.log(this.userData);
+    return this.userData;
+}
+
+
 
 
   /**
@@ -23,6 +61,15 @@ export class FirebaseDBService {
     return  this.afDatabase.list(`${this.mainDBNodeRef}/${this.plantNodeRef}`);
   }
 
+  /**
+   * This method will get a reference to the list of plants in the user garden
+   */
+  public getAllGardenPlants(){
+    return  this.afDatabase.list(`${this.mainDBNodeRef}/${this.userNodeRef}/${this.userData.uid}/${this.plantNodeRef}`);
+  }
+
+
+  
 
   /**
    * 

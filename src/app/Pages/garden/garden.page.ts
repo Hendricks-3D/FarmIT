@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GardenCrop } from 'src/app/Interfaces/garden-crop';
+import { firestore } from 'firebase';
+import { FirebaseDBService } from 'src/app/Services/firebase/firebase-db.service';
 
 @Component({
   selector: 'app-garden',
@@ -9,7 +12,11 @@ import { Router } from '@angular/router';
 export class GardenPage implements OnInit {
 
   public imageUrl='../../../assets/carrots.jpg'
-  constructor(private route:Router ) { }
+
+
+  public gardenCrops:GardenCrop[] = [];
+
+  constructor(private route:Router,private fireDB:FirebaseDBService ) { }
 
   ngOnInit() {
   }
@@ -18,5 +25,22 @@ export class GardenPage implements OnInit {
   addCropToGarden():void{
       this.route.navigateByUrl('/tabs/addToGarden');
   }
+
+
+  //Method that gets all the user plants in the garden
+  private getAllGardenPlants():void
+  {
+      this.fireDB.getAllGardenPlants().snapshotChanges().subscribe(plants=>
+        {
+        plants.forEach(plant=>{
+        this.gardenCrops.push(plant.payload.val() as GardenCrop);
+        
+       });
+      });
+    
+  }
+
+
+
 
 }

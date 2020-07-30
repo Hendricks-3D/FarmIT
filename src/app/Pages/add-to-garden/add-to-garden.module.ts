@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { AddToGardenPageRoutingModule } from './add-to-garden-routing.module';
 
 import { AddToGardenPage } from './add-to-garden.page';
+import { CustomFilterPipe } from '../../Pipes/custom-filter.pipe';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { AddToGardenPage } from './add-to-garden.page';
     IonicModule,
     AddToGardenPageRoutingModule
   ],
-  declarations: [AddToGardenPage]
+  declarations: [AddToGardenPage,CustomFilterPipe]
 })
 export class AddToGardenPageModule {}

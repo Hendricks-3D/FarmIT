@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GardenCrop } from 'src/app/Interfaces/garden-crop';
 
 @Component({
   selector: 'app-garden-detail',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GardenDetailPage implements OnInit {
 
+
+  private gardenCrop = {} as GardenCrop;
+  
   constructor() { }
 
   ngOnInit() {
   }
+
+
 
 }
