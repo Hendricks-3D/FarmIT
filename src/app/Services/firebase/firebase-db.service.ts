@@ -65,7 +65,7 @@ this.userData = JSON.parse(localStorage.getItem('user'));
    * This method will get a reference to the list of plants in the user garden
    */
   public getAllGardenPlants(){
-    return  this.afDatabase.list(`${this.mainDBNodeRef}/${this.userNodeRef}/${this.userData.uid}/${this.plantNodeRef}`);
+    return  this.afDatabase.list(`${this.mainDBNodeRef}/${this.userNodeRef}/${this.userData.uid}/garden`);
   }
 
 

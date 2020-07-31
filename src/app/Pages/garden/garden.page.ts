@@ -16,11 +16,19 @@ export class GardenPage implements OnInit {
 
   public gardenCrops:GardenCrop[] = [];
 
-  constructor(private route:Router,private fireDB:FirebaseDBService ) { }
+  constructor(private route:Router,private fireDB:FirebaseDBService ) {
+    
+   }
 
   ngOnInit() {
-  }
 
+    
+  }
+  ngAfterContentInit() {
+    this.getAllGardenPlants();
+
+    console.log(this.gardenCrops)
+  }
 
   addCropToGarden():void{
       this.route.navigateByUrl('/tabs/addToGarden');

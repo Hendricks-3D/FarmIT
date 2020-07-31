@@ -51,7 +51,10 @@
   </ion-card>
 
 
- 
+  <div  *ngIf="selectedPlant.name==='none'">
+    <ion-icon name="search-outline"></ion-icon>
+    <p> Search for any crops to get farming tips!</p> 
+  </div>
 
 
 
