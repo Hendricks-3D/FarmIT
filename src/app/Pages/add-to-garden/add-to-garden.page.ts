@@ -80,7 +80,8 @@ searchPlants(ev: any) {
       this.crop.name = plant.name;
       this.crop.thumbnail_url = plant.thumbnail_url;
 
-      this.fireDB.addNewDataToDB(`${this.fireDB.mainDBNodeRef}/${this.fireDB.userNodeRef}/${this.fireDB.userData.uid}/${this.fireDB.plantNodeRef}`,this.crop)
+      console.log(this.fireDB.GetCurrentUserData);
+      this.fireDB.addNewDataToDB(`${this.fireDB.mainDBNodeRef}/${this.fireDB.userNodeRef}/${this.fireDB.userData.uid}/garden`,this.crop)
       .then(promise=>{
         this.utilServ.presentToast(this.crop.name+" was added to your garden successfully.");
 

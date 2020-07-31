@@ -21,7 +21,7 @@ export class FirebaseDBService {
 
   constructor(private afDatabase: AngularFireDatabase,private afAuth:AngularFireAuth) {
 
-    
+    this.GetCurrentUserData();//THIS METHOD IS CALLED TO GET CURRENT USER DATA SO THAT THE UID CAN BE USED TO PERFORM MORE OPEREATIONS
    }
 
 

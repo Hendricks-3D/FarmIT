@@ -40,7 +40,7 @@ export class ForgetPasswordPage implements OnInit {
 
    // this.navCtrl.navigateRoot('home');
 
-   this.router.navigateByUrl('/tabs/login')
+   this.router.navigateByUrl('/login')
   }
 
 }

@@ -27,7 +27,7 @@ export class RegistrationPage implements OnInit {
   * Navigate user to the login page
   */
  private goToLogin():void {
-   this.router.navigateByUrl('/tabs/login');
+   this.router.navigateByUrl('login');
  }
 
  ngOnInit() {
@@ -49,7 +49,7 @@ export class RegistrationPage implements OnInit {
          this.fireDBService.addNewDataToDB(`${this.mainDBNodeRef}/${this.userNodeRef}/${this.user.uid}`,this.user)
          .then(()=>{
            console.log("user data stored");
-           this.router.navigateByUrl('home');
+           this.router.navigateByUrl('login');
 
              this.utilityServ.presentToast('Registration as successful!');
          }).catch((err)=>{

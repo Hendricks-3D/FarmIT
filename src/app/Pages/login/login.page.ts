@@ -29,7 +29,7 @@ ngOnInit() {
 * Called in the home.html page
 */
 private goToSignUp():void {
-this.router.navigateByUrl('/tabs/registration');
+this.router.navigateByUrl('/registration');
 }
 
 
@@ -41,7 +41,7 @@ this.fireDB.authenticateUser(this.email,this.password).then(()=>{
   //print successful toast message
 
  this.utilServ.presentToast('Login was successful.');
- this.router.navigateByUrl('/tabs/home');
+ this.router.navigateByUrl('/tabs/garden');
   
 }).catch((err)=>{
 
@@ -54,6 +54,6 @@ this.fireDB.authenticateUser(this.email,this.password).then(()=>{
   private goToForgetPassword():void{
 
    
-    this.router.navigateByUrl('/tabs/forget-password');
+    this.router.navigateByUrl('forget-password');
   }
 }
