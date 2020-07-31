@@ -1,25 +1,79 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Garden</ion-title>
 
-      <!-- Side menu button -->
-      <ion-buttons slot="end" (click)="addCropToGarden()">
-        <ion-icon name="add-outline"></ion-icon>
-      </ion-buttons>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content>
+<ion-content style="">
 
-  <ion-grid>
+  <ion-text><h1 style="margin-left: 40px; margin-top: 30px; font-size: 30px;">
+    <h1 > <span >Joshua's</span> </h1>
+    <span style="color: green;">
+    Virtual Garden</span></h1></ion-text>
+  
+
+  <div id="gardenContainer" style="width: 100%; background-image: url(../../../assets/Images/DIRT.jpg);">
     <ion-row>
-      <ion-col size="12" size-sm>
-        <ion-card >
-          <ion-img [src]="imageUrl"></ion-img>
-
-        </ion-card>
-     </ion-col>
+      <ion-col class="ion-text-left" size="12">
+        <ion-row>
+          <ion-col size="12">
+            <ion-row>
+              <a class="button" style="">
+                <img  src="../../../assets/Images/carrot.png" height="100px" width="100px" class="ion-text-center" style="padding: 15px; float: left;"/>
+                <div style="float: left; height:70px; width: 300px; margin-top: 10px;">
+                    <ion-text><h5>Carrot</h5></ion-text>
+                    <ion-text ><h6 style="font-size: 14px; color:black;">Time to water: 01:09:43</h6></ion-text>
+                </div>
+              </a>
+            </ion-row>
+            
+            
+          </ion-col>
+          <ion-col size="12">
+            <a class="button">
+              <img  src="../../../assets/Images/tomato.png" height="100px" width="100px" style="padding: 15px; float: left;"/>
+              <div style="float: left; height:70px; width: 300px; margin-top: 10px;">
+                <ion-text><h5>Tomato</h5></ion-text>
+                <ion-text ><h6 style="font-size: 14px; color: black;">Time to water: 00:09:43</h6></ion-text>
+            </div>
+            </a>
+          </ion-col>
+          <ion-col size="12">
+            <a class="button">
+              <img  src="../../../assets/Images/cabbage.png" height="100px" width="100px" style="padding: 15px; float: left;"/>
+              <div style="float: left; height:70px; width: 300px; margin-top: 10px;">
+                <ion-text><h5>Cabbage</h5></ion-text>
+                <ion-text ><h6 style="font-size: 14px; color: black;">Time to water: 02:09:43</h6></ion-text>
+            </div>
+            </a>
+          </ion-col>
+        </ion-row>
+        
+      </ion-col>
     </ion-row>
-  </ion-grid>
+    <ion-row>
+      
+    </ion-row>
+    <div style="width: 100px; width:100%;">
+      <ion-fab horizontal="end" vertical="center" slot="fixed" style="margin-top: 55px !important; ">
+        <ion-fab-button color="success">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </div>
+    
+  </div>
+  <ion-text>
+    <h1 class="ion-text-left" style="color: green; margin-left: 40px;">Ready to Harvest</h1>
+  </ion-text>
+  <div id="gardenContainer2" style="width: 100%; height: 150px; padding-right: 50px !important; margin-bottom: 50px; color: white; background-image: url(../../../assets/Images/DIRT.jpg);">
+   
+   
+    <ion-text style="color: white; margin-left: 50px !important; float: left;"><h4>Carrot  </h4></ion-text>
+    <ion-progress-bar value="0.5" style="margin-left: 50px; float: left; ;"></ion-progress-bar>
+    <ion-text style="color: white; margin-left: 50px !important; float: left;"><h4>Tomato  </h4></ion-text>
+    <ion-progress-bar value="0.8" style="margin-left: 50px; float: left; ;"></ion-progress-bar>
+    <ion-text style="color: white; margin-left: 50px !important; float: left;"><h4>Cabbage  </h4></ion-text>
+    <ion-progress-bar value="0.4" style="margin-left: 50px; float: left; ;"></ion-progress-bar>
+    
+  </div>
+  
 
 </ion-content>
+
