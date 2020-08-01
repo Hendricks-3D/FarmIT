@@ -4,6 +4,10 @@ ion-header{
 
 ion-card:hover {
     box-shadow: 0px 37px 20px -25px rgba(0,0,0,0.2);
-    transform: translate(20px, 0px);
+    transform: translate(0px, -20px);
   }
 
+ion-icon:hover{
+    color: green;
+    cursor: pointer;
+}

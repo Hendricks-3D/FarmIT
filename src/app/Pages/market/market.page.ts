@@ -10,6 +10,7 @@ export class MarketPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }
