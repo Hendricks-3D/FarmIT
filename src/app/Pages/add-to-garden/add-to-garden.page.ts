@@ -83,7 +83,7 @@ searchPlants(ev: any) {
       console.log(this.fireDB.GetCurrentUserData);
       this.fireDB.addNewDataToDB(`${this.fireDB.mainDBNodeRef}/${this.fireDB.userNodeRef}/${this.fireDB.userData.uid}/garden/${this.crop.name}`,this.crop)
       .then(promise=>{
-        this.utilServ.presentToast(this.crop.name+" was added to your garden successfully.");
+        this.utilServ.presentToast(this.crop.name+ " was added to your garden successfully.");
 
       }).catch(err=>{
         this.utilServ.presentToast("Something went wrong");
