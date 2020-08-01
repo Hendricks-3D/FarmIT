@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "969780963495",
+    "firebase_url": "https://farmit-ff6c2.firebaseio.com",
+    "project_id": "farmit-ff6c2",
+    "storage_bucket": "farmit-ff6c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:969780963495:android:3ab3dfaa7a6fc0c2519382",
+        "android_client_info": {
+          "package_name": "com.android.farmIT"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "969780963495-gd4m24r8qnbus38cefj31k12b2rgc8u4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBmGfebWvYpU18t6jnqwjb4cZLStgopus"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "969780963495-gd4m24r8qnbus38cefj31k12b2rgc8u4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
