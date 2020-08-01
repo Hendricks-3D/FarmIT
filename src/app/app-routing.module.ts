@@ -41,6 +41,14 @@ const routes: Routes = [
   {
     path: 'registration',
     loadChildren: () => import('./Pages/registration/registration.module').then( m => m.RegistrationPageModule)
+  },
+  {
+    path: 'add-crop-to-market',
+    loadChildren: () => import('./Pages/add-crop-to-market/add-crop-to-market.module').then( m => m.AddCropToMarketPageModule)
+  },
+  {
+    path: 'pay-pal-checkout',
+    loadChildren: () => import('./Pages/pay-pal-checkout/pay-pal-checkout.module').then( m => m.PayPalCheckoutPageModule)
   }
 ];
 @NgModule({

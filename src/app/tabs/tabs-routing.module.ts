@@ -43,6 +43,11 @@ const routes: Routes = [
         path: 'registration',
         loadChildren: () => import('../Pages/registration/registration.module').then(m => m.RegistrationPageModule)
       },
+      
+      {
+        path: 'paypal',
+        loadChildren: () => import('../Pages/pay-pal-checkout/pay-pal-checkout.module').then(m => m.PayPalCheckoutPageModule)
+      },
       {
         path: '',
         redirectTo: 'login',

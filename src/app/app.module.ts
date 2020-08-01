@@ -19,6 +19,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 // environment- environment stores firebase object
 import { environment } from '../environments/environment';
 import { CustomFilterPipe } from './Pipes/custom-filter.pipe';
+import { PayPal } from '@ionic-native/paypal/ngx';
 
 
 
@@ -34,6 +35,7 @@ import { CustomFilterPipe } from './Pipes/custom-filter.pipe';
   providers: [
     StatusBar,
     SplashScreen,
+    PayPal,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
