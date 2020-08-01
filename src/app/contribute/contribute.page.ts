@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { ModalController } from '@ionic/angular';
 })
 export class ContributePage implements OnInit {
 
-  constructor(public modalController: ModalController) { }
+  constructor(public modalController: ModalController,private route:Router) { }
 
   dismiss() {
     // using the injected ModalController this page
@@ -20,6 +21,14 @@ export class ContributePage implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  public goToPaypal():void{
+
+    this.modalController.dismiss({
+      'dismissed': true
+    });
+    this.route.navigateByUrl('/tabs/paypal');
   }
 
 }
