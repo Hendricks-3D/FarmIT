@@ -41,6 +41,10 @@ const routes: Routes = [
   {
     path: 'registration',
     loadChildren: () => import('./Pages/registration/registration.module').then( m => m.RegistrationPageModule)
+  },
+  {
+    path: 'contribute',
+    loadChildren: () => import('./contribute/contribute.module').then( m => m.ContributePageModule)
   }
 ];
 @NgModule({

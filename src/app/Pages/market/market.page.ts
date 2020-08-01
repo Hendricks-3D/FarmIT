@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { ContributePage } from 'src/app/contribute/contribute.page';
 
 @Component({
   selector: 'app-market',
@@ -7,10 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MarketPage implements OnInit {
 
-  constructor() { }
+  constructor(public modalController: ModalController) { }
 
   ngOnInit() {
-    
+
+  }
+
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: ContributePage,
+      cssClass: 'my-custom-class'
+    });
+    return await modal.present();
   }
 
 }
