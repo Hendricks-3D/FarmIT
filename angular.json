@@ -157,7 +157,7 @@
             }
           }
         },
-        "ionic-cordova-serve": {
+        "ionic-cordova-sexrve": {
           "builder": "@ionic/angular-toolkit:cordova-serve",
           "options": {
             "cordovaBuildTarget": "app:ionic-cordova-build",
