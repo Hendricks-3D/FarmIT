@@ -49,6 +49,13 @@ const routes: Routes = [
   {
     path: 'pay-pal-checkout',
     loadChildren: () => import('./Pages/pay-pal-checkout/pay-pal-checkout.module').then( m => m.PayPalCheckoutPageModule)
+    
+    
+  },
+  
+  {
+    path: 'contribute',
+    loadChildren: () => import('./contribute/contribute.module').then( m => m.ContributePageModule)
   }
 ];
 @NgModule({
